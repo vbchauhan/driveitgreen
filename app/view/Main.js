@@ -185,7 +185,6 @@ Ext.define('DriveItGreen.view.Main', {
 
                     ] //Main ends here...
 
-
                 }]
             }
 
