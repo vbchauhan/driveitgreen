@@ -12,7 +12,6 @@ Ext.define('DriveItGreen.view.Main', {
                     iconCls: 'home',
                     cls: 'home',
                     layout: 'hbox',
-                    
                     items: [{
                         xtype: 'toolbar',
                         docked: 'top',
