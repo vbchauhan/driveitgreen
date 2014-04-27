@@ -12,7 +12,7 @@ Ext.define('DriveItGreen.view.Main', {
                     iconCls: 'home',
                     cls: 'home',
                     layout: 'hbox',
-
+                    
                     items: [{
                         xtype: 'toolbar',
                         docked: 'top',
@@ -49,7 +49,14 @@ Ext.define('DriveItGreen.view.Main', {
                             xtype: 'spacer'
                         }, {
                             xtype: 'button',
-                            text: 'Find Route'
+                            text: 'Find Route',
+                            listeners :{
+                            	tap:function(){
+                            		alert('hi');
+                            		Ext.Viewport.add(Ext.create('DriveItGreen.view.Gscore'));
+
+                            	} 
+                            }
                         }, {
                             xtype: 'spacer'
 
@@ -70,45 +77,11 @@ Ext.define('DriveItGreen.view.Main', {
                 },
 
                 { //Nav Panel - 2 : G-Score
-                    xtype: 'nestedlist',
+                    xtype: 'Gscore',
                     title: 'G-Score',
                     iconCls: 'star',
                     displayField: 'title',
 
-
-                    store: {
-                        type: 'tree',
-
-                        fields: ['title', 'link', 'author', 'contentSnippet', 'content', {
-                            name: 'leaf',
-                            defaultValue: true
-                        }],
-
-                        root: {
-                            leaf: false
-                        },
-
-                        proxy: {
-                            type: 'jsonp',
-                            url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://feeds.feedburner.com/SenchaBlog',
-                            reader: {
-                                type: 'json',
-                                rootProperty: 'responseData.feed.entries'
-                            }
-                        }
-                    },
-
-                    detailCard: {
-                        xtype: 'panel',
-                        scrollable: true,
-                        styleHtmlContent: true
-                    },
-
-                    listeners: {
-                        itemtap: function(nestedList, list, index, element, post) {
-                            this.getDetailCard().setHtml(post.get('content'));
-                        }
-                    }
                 },
 
                 { //Nav Panel - 3 : Social
