@@ -1,4 +1,4 @@
-Ext.define('driveitgreen.view.Main', {
+Ext.define('DriveItGreen.view.Main', {
     extend: 'Ext.tab.Panel',
             xtype: 'main',
             requires: ['Ext.TitleBar'],

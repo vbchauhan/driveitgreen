@@ -11,7 +11,7 @@
 */
 
 Ext.application({
-    name: 'driveitgreen',
+    name: 'DriveItGreen',
 
     requires: [
         'Ext.MessageBox'
@@ -44,7 +44,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('driveitgreen.view.Main'));
+        Ext.Viewport.add(Ext.create('DriveItGreen.view.Main'));
     },
 
     onUpdated: function() {
