@@ -188,4 +188,5 @@ Ext.define('DriveItGreen.view.Main', {
 
                 }]
             }
+
 });
