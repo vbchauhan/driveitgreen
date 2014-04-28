@@ -9,70 +9,9 @@ Ext.define('DriveItGreen.view.Main', {
                 items: [ //Main Begins here...
                 { //Nav Panel - 1 : ROUTE 
                     title: 'Route', //Panel Title
+                    xtype: 'route',
                     iconCls: 'home',
                     cls: 'home',
-                    layout: 'hbox',
-                    items: [{
-                        xtype: 'toolbar',
-                        docked: 'top',
-                        items: [{
-                            xtype: 'spacer'
-                        }, {
-                            xtype: 'textfield',
-                            label: 'Start : ',
-                            width: '80%',
-                            labelWidth: '20%'
-
-
-                        }, {
-                            xtype: 'spacer'
-                        }]
-                    }, {
-                        xtype: 'toolbar',
-                        docked: 'top',
-                        items: [{
-                            xtype: 'spacer'
-                        }, {
-                            xtype: 'textfield',
-                            label: 'End : ',
-                             width: '80%',
-                            labelWidth: '20%'
-                        }, {
-                            xtype: 'spacer'
-                        }]
-
-                    }, {
-                        xtype: 'toolbar',
-                        docked: 'top',
-                        items: [{
-                            xtype: 'spacer'
-                        }, {
-                            xtype: 'button',
-                            text: 'Find Route',
-                            listeners :{
-                            	tap:function(){
-                            		alert('hi');
-                            		Ext.Viewport.add(Ext.create('DriveItGreen.view.Gscore'));
-
-                            	} 
-                            }
-                        }, {
-                            xtype: 'spacer'
-
-
-                        }]
-                    }, {
-                        xtype: 'map',
-                        useCurrentLocation: true,
-                        width: '100%',
-                        mapOptions: {
-                            zoom: 14,
-                            panControl: false,
-                            zoomControl: false,
-                            streetViewControl: false,
-                            
-                        }
-                    }]
                 },
 
                 { //Nav Panel - 2 : G-Score

@@ -18,7 +18,7 @@ Ext.application({
     ],
 
     views: [
-        'Main','Gscore'
+        'Main','Gscore', 'Route'
     ],
 
     icon: {
