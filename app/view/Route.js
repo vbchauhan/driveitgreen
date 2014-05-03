@@ -39,7 +39,11 @@ Ext.define('DriveItGreen.view.Route',{
 				text: 'Find Route',
 				listeners: {
                     tap: function() {
-                        Ext.get('routeOptions').show();
+                    	Ext.get('overlay').show();
+                    	Ext.Function.defer( function() {
+                    		Ext.get('overlay').hide();
+                    	}, 1000);
+                    	Ext.get('routeOptions').show();
                         this.parent.hide();
                         Ext.get('routeMap').show();
                         Ext.get('initMap').hide();
@@ -93,6 +97,12 @@ Ext.define('DriveItGreen.view.Route',{
                 src: 'resources/images/routemap.png',
                 style: 'background-size: 100% 100%;',
             }]
+		},{
+			xtype: 'loadmask',
+			id: 'overlay',
+			hidden: true,
+            message: 'Routing...',
+            
         }]
 	}
 });

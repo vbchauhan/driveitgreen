@@ -8,17 +8,17 @@ Ext.define('DriveItGreen.view.Main', {
 
                 items: [ //Main Begins here...
                 { //Nav Panel - 1 : ROUTE 
-                    title: 'Route', //Panel Title
-                    xtype: 'route',
-                    iconCls: 'home',
-                    cls: 'home',
+                    title: 'Route', //title used in navigation button
+                    xtype: 'route', //import pre-defined view from route.js
+                    iconCls: 'home', //icon to be shown in navigation
+                    //cls: 'home',
                 },
 
                 { //Nav Panel - 2 : G-Score
-                    xtype: 'Gscore',
                     title: 'G-Score',
+                    xtype: 'gscore', //import view defined in gscore.js
                     iconCls: 'star',
-                    displayField: 'title',
+                    //displayField: 'title',
 
                 },
 
