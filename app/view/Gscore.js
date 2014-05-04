@@ -11,9 +11,49 @@ Ext.define('DriveItGreen.view.Gscore',{
 			items: [{
 				xtype: 'panel', //Vertical container for Current G-Score
 				flex: 1, //width proportion
-				html: 'G-scores',
+				//html: 'G-scores',
 				cls: 'border-right-black',
+				//layout: 'hbox',
 				style: 'background-color: rgb(169, 255, 193);',
+				items: [{
+					xtype: 'label',
+					//label: 'Gscore',
+					id: 'gscore',
+					name: 'gscore',
+					html: '0',
+					listeners: {
+                    	//var me = this;
+                    	painted: function () {
+                    	      console.log(Ext.getCmp('gscore').getHtml());
+                    	      var gscore = 1;
+                    	      Ext.getCmp('gscore').setHtml('Hello');
+/*                    	      var task = Ext.create('Ext.util.DelayedTask', {
+                    	    	     fn: function() {
+                    	    	    	 Ext.getCmp('gscore').setHtml(gscore);
+                    	    	     }
+                    	    	});
+                    	    	
+*/                    	      
+                    	      var task = Ext.create('Ext.util.DelayedTask', function() {
+                    	    	  gscore++;  
+                    	    	  Ext.getCmp('gscore').setHtml(gscore);
+                    	    	  console.log(Ext.getCmp('gscore').getHtml());
+                    	    	  task.delay(1000);
+                    	      });
+                    	      //task.delay(1000);
+                    	      while (gscore<1980) {
+                    	    	  gscore++;
+                    	    	  setTimeout(function() {
+                        	    	  Ext.getCmp('gscore').setHtml(gscore);
+                        	    	  console.log(Ext.getCmp('gscore').getHtml());
+                        	    	}, 500);
+                        	        
+                    	      }
+                    	      
+                    	      
+                    	 }
+                    }
+				}]
 			}, {
 				xtype: 'panel', //Horizontal container for Expected G-score
 				flex: 1, //Width proportion
