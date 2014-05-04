@@ -1,5 +1,6 @@
 Ext.define('DriveItGreen.view.Gscore',{
 	extend: 'Ext.Panel',
+	
 	xtype: 'gscore', //define short-name 
 	config: {
 		layout: 'vbox', //layout of child items to be displayed - vbox => vertical stack of panels
@@ -17,40 +18,25 @@ Ext.define('DriveItGreen.view.Gscore',{
 				style: 'background-color: rgb(169, 255, 193);',
 				items: [{
 					xtype: 'label',
-					//label: 'Gscore',
+					label: 'Gscore',
 					id: 'gscore',
 					name: 'gscore',
 					html: '0',
 					listeners: {
-                    	//var me = this;
                     	painted: function () {
-                    	      console.log(Ext.getCmp('gscore').getHtml());
-                    	      var gscore = 1;
-                    	      Ext.getCmp('gscore').setHtml('Hello');
-/*                    	      var task = Ext.create('Ext.util.DelayedTask', {
-                    	    	     fn: function() {
-                    	    	    	 Ext.getCmp('gscore').setHtml(gscore);
-                    	    	     }
-                    	    	});
-                    	    	
-*/                    	      
+                    	      var gscore=1;
+                    	      
                     	      var task = Ext.create('Ext.util.DelayedTask', function() {
-                    	    	  gscore++;  
-                    	    	  Ext.getCmp('gscore').setHtml(gscore);
-                    	    	  console.log(Ext.getCmp('gscore').getHtml());
-                    	    	  task.delay(1000);
+                    	    	  var nextValue =  Math.floor((Math.random() * 10) + 1);
+                    	    	  gscore += (nextValue);  
+                    	    	  if(gscore != 1980){           	    		  
+                    	    		  Ext.getCmp('gscore').setHtml(gscore);
+                    	    		  task.delay(1000);
+                    	    		  Ext.util.TaskRunner().start(task);
+                    	    	  }
                     	      });
-                    	      //task.delay(1000);
-                    	      while (gscore<1980) {
-                    	    	  gscore++;
-                    	    	  setTimeout(function() {
-                        	    	  Ext.getCmp('gscore').setHtml(gscore);
-                        	    	  console.log(Ext.getCmp('gscore').getHtml());
-                        	    	}, 500);
-                        	        
-                    	      }
                     	      
-                    	      
+                    	      task.delay(1000);
                     	 }
                     }
 				}]
