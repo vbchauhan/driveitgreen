@@ -6,7 +6,11 @@ Ext.define('DriveItGreen.view.Main', {
                 tabBarPosition: 'bottom',
                 fullscreen: 'true',
 				
+<<<<<<< HEAD
 				// This is namesh's first comment
+=======
+				//Abc
+>>>>>>> FETCH_HEAD
                 items: [ //Main Begins here...
                 { //Nav Panel - 1 : ROUTE 
                     title: 'Route', //title used in navigation button
