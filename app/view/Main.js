@@ -22,7 +22,7 @@ Ext.define('DriveItGreen.view.Main', {
 
                 },
 
-                { //Nav Panel - 3 : Social
+                { //Nav Panel - 3 : Social 
                     xtype: 'nestedlist',
                     title: 'Social',
                     iconCls: 'user',
