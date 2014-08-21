@@ -5,7 +5,8 @@ Ext.define('DriveItGreen.view.Main', {
             config: {
                 tabBarPosition: 'bottom',
                 fullscreen: 'true',
-
+				
+				// This is namesh's comment
                 items: [ //Main Begins here...
                 { //Nav Panel - 1 : ROUTE 
                     title: 'Route', //title used in navigation button
